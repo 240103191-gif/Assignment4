@@ -23,6 +23,10 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -69,7 +73,8 @@ val artworks = listOf(
 
 @Composable
 fun ArtSpaceScreen(modifier: Modifier = Modifier) {
-    val currentArtwork = artworks[0]
+    var currentArtworkIndex by remember { mutableStateOf(0) }
+    val currentArtwork = artworks[currentArtworkIndex]
 
     Column(
         modifier = modifier
@@ -102,8 +107,20 @@ fun ArtSpaceScreen(modifier: Modifier = Modifier) {
         Spacer(modifier = Modifier.height(28.dp))
 
         DisplayController(
-            onPreviousClick = {},
-            onNextClick = {},
+            onPreviousClick = {
+                currentArtworkIndex = if (currentArtworkIndex > 0) {
+                    currentArtworkIndex - 1
+                } else {
+                    artworks.size - 1
+                }
+            },
+            onNextClick = {
+                currentArtworkIndex = if (currentArtworkIndex < artworks.size - 1) {
+                    currentArtworkIndex + 1
+                } else {
+                    0
+                }
+            },
             modifier = Modifier.fillMaxWidth()
         )
 
