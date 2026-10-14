@@ -5,4 +5,24 @@
     <string name="how_was_the_service">Tip Percentage</string>
     <string name="round_up_tip">Round up tip?</string>
     <string name="tip_amount">Tip Amount: %s</string>
+
+    <string name="art_space_title">Art Space Gallery</string>
+    <string name="previous_button">Previous</string>
+    <string name="next_button">Next</string>
+
+    <string name="artwork_1_title">The Starry Night</string>
+    <string name="artwork_1_artist">Vincent van Gogh</string>
+    <string name="artwork_1_year">1889</string>
+
+    <string name="artwork_2_title">Mona Lisa</string>
+    <string name="artwork_2_artist">Leonardo da Vinci</string>
+    <string name="artwork_2_year">1503</string>
+
+    <string name="artwork_3_title">The Great Wave off Kanagawa</string>
+    <string name="artwork_3_artist">Katsushika Hokusai</string>
+    <string name="artwork_3_year">1831</string>
+
+    <string name="artwork_4_title">Girl with a Pearl Earring</string>
+    <string name="artwork_4_artist">Johannes Vermeer</string>
+    <string name="artwork_4_year">1665</string>
 </resources>
