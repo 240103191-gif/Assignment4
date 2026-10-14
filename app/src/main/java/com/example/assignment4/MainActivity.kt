@@ -15,6 +15,10 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -39,6 +43,8 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun TipTimeLayout() {
+    var amountInput by remember { mutableStateOf("") }
+
     Column(
         modifier = Modifier.padding(40.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -51,8 +57,8 @@ fun TipTimeLayout() {
                 .align(alignment = Alignment.Start)
         )
         TextField(
-            value = "",
-            onValueChange = {},
+            value = amountInput,
+            onValueChange = { amountInput = it },
             label = { Text(stringResource(R.string.bill_amount)) },
             singleLine = true,
             modifier = Modifier
